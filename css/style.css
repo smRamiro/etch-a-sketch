@@ -16,6 +16,14 @@ h1{
     margin-bottom: 15%;
 }
 
+.squareContainer{
+    display: grid;
+    grid-template-columns: repeat(16,auto);
+    justify-content: center;
+    width: 960px;
+    height: auto;
+}
+
 .square{
     background-color: coral; /* coral could be good */
     width: 16px;
@@ -23,8 +31,7 @@ h1{
     border: .5px rgb(40, 40, 40) solid;
 }
 
-.squareContainer{
-    display: grid;
-    grid-template-columns: repeat(16,auto);
-    justify-content: center;
+.square:hover{
+    border: .5px rgb(255, 255, 255) solid;
+    background-color: pink;
 }
