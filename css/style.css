@@ -1,0 +1,30 @@
+body{
+    background-color: rgb(93, 93, 201);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    margin-bottom: 15%;
+}
+
+.square{
+    background-color: coral; /* coral could be good */
+    width: 16px;
+    height: 16px;
+    border: .5px rgb(40, 40, 40) solid;
+}
+
+.squareContainer{
+    display: grid;
+    grid-template-columns: repeat(16,auto);
+    justify-content: center;
+}
