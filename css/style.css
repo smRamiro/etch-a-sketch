@@ -13,25 +13,31 @@ main{
 }
 
 h1{
-    margin-bottom: 15%;
+    margin-bottom: 5%;
 }
 
 .squareContainer{
+    background-color: violet;
+    width: 450px;
+    height: 450px;
     display: grid;
-    grid-template-columns: repeat(16,auto);
-    justify-content: center;
-    width: 960px;
-    height: auto;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
 }
 
 .square{
-    background-color: coral; /* coral could be good */
-    width: 16px;
-    height: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: white;
     border: .5px rgb(40, 40, 40) solid;
+    
 }
 
 .square:hover{
     border: .5px rgb(255, 255, 255) solid;
     background-color: pink;
+}
+
+.buttons{
+    margin-bottom: 5%;
 }
