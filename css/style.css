@@ -23,18 +23,19 @@ h1{
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
+    border:  1px black solid;
 }
 
 .square{
     box-sizing: border-box;
     width: 100%;
     background-color: white;
-    border: .5px rgb(40, 40, 40) solid;
+    border: 0.2px rgb(139, 139, 139) solid;
     
 }
 
 .square:hover{
-    border: .5px rgb(255, 255, 255) solid;
+    border: 0.2px rgb(255, 255, 255) solid;
     background-color: pink;
 }
 

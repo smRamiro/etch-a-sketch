@@ -1,9 +1,11 @@
 let counter = 0;
 let size = 256;//16x16
 let changedGrid = 0;
+let randomColorChoosed = false;
 
-document.querySelector("#clearGrid").addEventListener("click", changeGrid);
-document.querySelector("#changeColor").addEventListener("click", changeGrid);
+document.querySelector("#clearGrid").addEventListener("click", clearGrid);
+document.querySelector("#randomColor").addEventListener("click", userWantsRandom);
+document.querySelector("#blackColor").addEventListener("click", userWantsBlack);
 document.querySelector("#changeGrid").addEventListener("click", changeGrid);
 
 function changeGrid(){//first removes all squares generated and then create new ones with the user input.
@@ -27,19 +29,37 @@ function changeGrid(){//first removes all squares generated and then create new 
     addListenerToSquares();
 }
 
-function addListenerToSquares(){
-    const squares = document.querySelectorAll(".square");
-
-    for (let i = 0; i < squares.length; i++) {
-        squares[i].addEventListener("mouseover", changeColor);
-        console.log(1);
-    }
+function userWantsRandom(){
+    randomColorChoosed = true;
+    return randomColorChoosed;
 }
 
-function changeColor(e){
+function userWantsBlack(){
+    randomColorChoosed = false;
+}
+
+function hoverColor(e){
+    if (randomColorChoosed){
         let randomColor = Math.floor(Math.random()*16777215).toString(16);
         e.toElement.style.backgroundColor = `#${randomColor}`; // e = event. "e.toElement" = event --> element triggered.
+    }else{
+        e.toElement.style.backgroundColor = "black";
+    }   
+}
+function addListenerToSquares(){
+    const squares = document.querySelectorAll(".square");
+        for (let i = 0; i < squares.length; i++) {
+            squares[i].addEventListener("mouseover", hoverColor);
+            console.log(1);
+        }
+}
+
+function clearGrid(){
+    const coloredSquares = document.querySelectorAll(".square");
+    for (let i = 0; i < coloredSquares.length; i++) {
+        coloredSquares[i].style.backgroundColor = "white";
     }
+}
 
 if(changedGrid == 0){//size hasn't been changed by the user
     
